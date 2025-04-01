@@ -8,6 +8,6 @@ use serde::Serialize;
 pub struct Output {}
 
 #[plugin_fn]
-pub fn run(fin_data: FinData<f64>) -> FnResult<Output> {
+pub fn run(fin_data: FinData) -> FnResult<Output> {
     Ok(Output {})
 }
