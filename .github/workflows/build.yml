@@ -24,7 +24,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: target/wasm32-unknown-unknown/release/*.wasm
+        file: target/wasm32-unknown-unknown/release/rust_function_base.wasm
         asset_name: finfunc.wasm
         tag: ${{ github.ref }}
         overwrite: true
