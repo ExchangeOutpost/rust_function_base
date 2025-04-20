@@ -36,7 +36,8 @@ impl TickersData {
 #[derive(Deserialize)]
 pub struct FinData {
     tickers_data: HashMap<String, TickersData>,
-    piped_data: HashMap<String,String>
+    piped_data: HashMap<String,String>,
+    call_arguments: HashMap<String, String>,
 }
 
 impl FromBytesOwned for FinData
@@ -90,5 +91,10 @@ impl FinData {
     /// Returns the candles as Decimal, precision is taken from the ticker
     pub fn get_candles_decimal (&self, label: &str) -> Result<Vec<Candle<Decimal>>, WithReturnCode<Error>> {
         Ok(self.get_candles_decimal_iter(label)?.collect())
+    }
+
+    // Returns the call arguments as a HashMap
+    pub fn get_call_arguments(&self) -> &HashMap<String, String> {
+        &self.call_arguments
     }
 }
