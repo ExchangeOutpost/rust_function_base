@@ -19,7 +19,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: finfunc.wasm
-        path: target/wasm32-unknown-unknown/debug/finfunc_rust.wasm
+        path: target/wasm32-unknown-unknown/release/finfunc_rust.wasm
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
