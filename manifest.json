@@ -1,0 +1,7 @@
+{
+    "function_name": "Rust Function Base",
+    "description": "A base for creating Rust functions",
+    "financial_data_keys": [],
+    "call_arguments_schema": {},
+    "enforce_schemas": false
+}
