@@ -125,6 +125,17 @@ pub struct Output {
 }
 ```
 
+### Sending webhooks 
+
+You can send webhooks to external services by using the `schedule_webhook` function:
+
+```rust
+use crate::exchange_outpost::schedule_webhook;
+
+schedule_webhook("/webhook", payload);
+```
+This will send a POST request to the specified webhook URL with the given payload. The base url will be set to the one you configured for webhooks in your Organization settings.
+
 ## Building and Deployment
 
 ### Local Build
@@ -145,8 +156,8 @@ This project includes GitHub Actions for automated releases. When you push a tag
 
 To create a release:
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag 1.0.0
+git push origin 1.0.0
 ```
 
 ### Testing Your Function
