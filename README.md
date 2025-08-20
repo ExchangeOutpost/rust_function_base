@@ -94,15 +94,15 @@ pub fn run(fin_data: FinData) -> FnResult<Output> {
 let symbols = fin_data.get_labels();
 
 // Access candlestick data
-let candles = fin_data.get_candles("BTCUSD")?;
+let candles = fin_data.get_candles("symbol_data")?;
 for candle in candles {
     println!("Close price: {}", candle.close);
 }
 
 // Use decimal precision for accurate calculations
-let decimal_candles = fin_data.get_candles_decimal("BTCUSD")?;
+let decimal_candles = fin_data.get_candles_decimal("symbol_data")?;
 
-// Access piped data from other functions
+// Access piped data from other functions (usage of this is discouraged)
 let pipe_sources = fin_data.get_pipe_sources();
 let data = fin_data.get_data_from_pipe("previous_analysis")?;
 
