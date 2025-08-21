@@ -1,6 +1,6 @@
 mod exchange_outpost;
 use crate::exchange_outpost::FinData;
-use extism_pdk::{encoding, plugin_fn, FnResult, Json, ToBytes};
+use extism_pdk::{FnResult, Json, ToBytes, encoding, plugin_fn};
 use serde::Serialize;
 
 #[derive(Serialize, ToBytes)]

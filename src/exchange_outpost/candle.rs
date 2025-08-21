@@ -1,5 +1,5 @@
-use serde::{Deserialize, Deserializer};
 use rust_decimal::prelude::*;
+use serde::{Deserialize, Deserializer};
 
 /// Represents a single candlestick in financial data, typically used in trading charts.
 #[allow(dead_code)]
@@ -43,11 +43,21 @@ impl Candle<f64> {
     pub fn to_decimal(&self, precision: i32) -> Candle<Decimal> {
         Candle {
             timestamp: self.timestamp,
-            open: Decimal::from_f64(self.open).unwrap_or(Decimal::ZERO).round_dp(precision as u32),
-            high: Decimal::from_f64(self.high).unwrap_or(Decimal::ZERO).round_dp(precision as u32),
-            low: Decimal::from_f64(self.low).unwrap_or(Decimal::ZERO).round_dp(precision as u32),
-            close: Decimal::from_f64(self.close).unwrap_or(Decimal::ZERO).round_dp(precision as u32),
-            volume: Decimal::from_f64(self.volume).unwrap_or(Decimal::ZERO).round_dp(precision as u32),
+            open: Decimal::from_f64(self.open)
+                .unwrap_or(Decimal::ZERO)
+                .round_dp(precision as u32),
+            high: Decimal::from_f64(self.high)
+                .unwrap_or(Decimal::ZERO)
+                .round_dp(precision as u32),
+            low: Decimal::from_f64(self.low)
+                .unwrap_or(Decimal::ZERO)
+                .round_dp(precision as u32),
+            close: Decimal::from_f64(self.close)
+                .unwrap_or(Decimal::ZERO)
+                .round_dp(precision as u32),
+            volume: Decimal::from_f64(self.volume)
+                .unwrap_or(Decimal::ZERO)
+                .round_dp(precision as u32),
         }
     }
 }
